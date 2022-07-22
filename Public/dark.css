@@ -1,0 +1,11 @@
+.navigationLinks {
+    color: white;
+}
+
+.navigationLinks::after {
+    background-color: white;
+}
+
+html {
+    background-color: black;
+}
