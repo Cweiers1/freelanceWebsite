@@ -4,7 +4,12 @@ let Site = document.getElementById("html");
 let previousTheme = (localStorage.getItem("Theme"));
 let OSprefer = window.matchMedia("(prefers-color-scheme: dark)");
 
-OSprefer.addEventListener( "change", );
+OSprefer.addEventListener( "change", () => {
+    if(localStorage.getItem("Theme") == "OSTheme") {
+        Site.dataset.OSTheme = OSTheme();        
+    }
+    }
+);
 
 //uses CSS media queries to find OS theme
 function OSTheme() {
@@ -48,17 +53,9 @@ function clearTheme() {
     Site.dataset.theme = OSTheme();
 }
 
-
-// if no theme is stored on startup
+// if no theme is stored on startup, set to OS theme
 if (localStorage.getItem("Theme") == null) {
     localStorage.setItem("Theme", "OSTheme");
 }
 
-
-
-
 loadTheme(previousTheme);
-
-
-console.log(OSTheme())
-
